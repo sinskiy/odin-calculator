@@ -42,7 +42,10 @@ function handleClearButtonClick() {
 const operateButton = document.querySelector("#operate");
 operateButton.addEventListener("click", handleOperateButtonClick);
 function handleOperateButtonClick() {
-  const result = operate(Number(a), operator, Number(b)).toString();
+  let result = operate(Number(a), operator, Number(b)).toString();
+  if (result.length > 7) {
+    result = Number(result).toFixed(5);
+  }
 
   a = result;
   operator = "";
