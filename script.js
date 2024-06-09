@@ -35,7 +35,10 @@ operateButton.addEventListener("click", handleOperateButtonClick);
 function handleOperateButtonClick() {
   const result = operate(Number(a), operator, Number(b)).toString();
   display.innerText = result;
+
   a = result;
+  operator = "";
+  b = "";
 }
 
 function operate(a, operator, b) {
