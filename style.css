@@ -59,6 +59,8 @@ button:hover {
 }
 
 #calculator {
+  width: 20rem;
+
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -70,7 +72,7 @@ button:hover {
 }
 
 #display {
-  width: 100%;
+  max-width: 100%;
   min-height: calc(1lh + 2rem);
   padding: 1rem;
 
@@ -79,6 +81,8 @@ button:hover {
 
   font-size: 4rem;
   text-align: right;
+
+  overflow: hidden;
 }
 
 #digits {

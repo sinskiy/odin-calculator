@@ -8,20 +8,22 @@
   </head>
   <body>
     <div id="calculator">
-      <div id="display">0</div>
+      <div id="display-parent">
+        <div id="display">0</div>
+      </div>
       <div id="main">
         <button id="clear">clear</button>
         <button id="operate">=</button>
       </div>
       <div id="digits">
-        <div>
+        <div id="digits--left">
           <button>0</button>
           <button>1</button>
           <button>2</button>
           <button>3</button>
           <button>4</button>
         </div>
-        <div>
+        <div id="digits--right">
           <button>5</button>
           <button>6</button>
           <button>7</button>
