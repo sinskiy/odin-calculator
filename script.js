@@ -29,16 +29,24 @@ function updateDisplayText() {
   display.innerText = `${a} ${operator} ${b}`;
 }
 
+const clearButton = document.querySelector("#clear");
+clearButton.addEventListener("click", handleClearButtonClick);
+function handleClearButtonClick() {
+  a = "";
+  operator = "";
+  b = "";
+  updateDisplayText();
+}
+
 const operateButton = document.querySelector("#operate");
 operateButton.addEventListener("click", handleOperateButtonClick);
-
 function handleOperateButtonClick() {
   const result = operate(Number(a), operator, Number(b)).toString();
-  display.innerText = result;
 
   a = result;
   operator = "";
   b = "";
+  updateDisplayText();
 }
 
 function operate(a, operator, b) {
