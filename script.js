@@ -59,6 +59,8 @@ function handleClearButtonClick() {
 const operateButton = document.querySelector("#operate");
 operateButton.addEventListener("click", handleOperateButtonClick);
 function handleOperateButtonClick() {
+  if (!a || !operator || !b) return;
+
   let result = operate(Number(a), operator, Number(b)).toString();
   if (result.length > 7) {
     result = Number(result).toFixed(5);
