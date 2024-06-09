@@ -11,6 +11,10 @@ function handleDigitsClick(e) {
     a += e.target.innerText;
   } else {
     b += e.target.innerText;
+
+    if (!b.includes(".")) {
+      floatedButton.disabled = false;
+    }
   }
   updateDisplayText();
 }
@@ -28,6 +32,19 @@ function handleOperatorsClick(e) {
 const display = document.querySelector("#display");
 function updateDisplayText() {
   display.innerText = `${a} ${operator} ${b}`;
+}
+
+const floatedButton = document.querySelector("#floated");
+floatedButton.addEventListener("click", handleFloatedClick);
+function handleFloatedClick(e) {
+  if (a.includes(".") || b.includes(".")) return;
+
+  if (!operator) {
+    a += e.target.innerText;
+  } else {
+    b += e.target.innerText;
+  }
+  updateDisplayText();
 }
 
 const clearButton = document.querySelector("#clear");

@@ -50,6 +50,9 @@ button {
 button:hover {
   filter: brightness(125%);
 }
+button:disabled {
+  opacity: 20%;
+}
 
 #main,
 #digits div,
