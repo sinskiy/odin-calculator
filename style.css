@@ -2,13 +2,87 @@
   color-scheme: dark;
   --background: #12140e;
   --on-background: #e2e3d8;
+  --surface: #1e201a;
+  --surface-high: #282b24;
+  --primary: #354e16;
+  --on-primary: #cdeda3;
+  --secondary: #404a33;
+  --on-secondary: #dce7c8;
+  --tertiary: #1f4e4b;
+  --on-tertiary: #bcece7;
 }
-
 * {
   box-sizing: border-box;
 }
-
 body {
   background-color: var(--background);
   color: var(--on-background);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  min-width: fit-content;
+  width: 3rem;
+  height: 5rem;
+  padding: 0 1rem;
+
+  border: none;
+
+  font-size: 2rem;
+
+  transition: filter 150ms;
+}
+#main button {
+  background-color: var(--primary);
+  color: var(--on-primary);
+}
+#digits button {
+  background-color: var(--tertiary);
+  color: var(--on-tertiary);
+}
+#operators button {
+  background-color: var(--secondary);
+  color: var(--on-secondary);
+}
+button:hover {
+  filter: brightness(125%);
+}
+
+#main,
+#digits div,
+#operators {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#calculator {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  background-color: var(--surface);
+
+  border-radius: 1rem;
+  padding: 2rem 1rem;
+}
+
+#display {
+  width: 100%;
+  min-height: calc(1lh + 2rem);
+  padding: 1rem;
+
+  border-radius: 1rem;
+  background-color: var(--surface-high);
+
+  font-size: 4rem;
+  text-align: right;
+}
+
+#digits {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }

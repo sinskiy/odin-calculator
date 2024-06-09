@@ -19,6 +19,7 @@ const operators = document.querySelector("#operators");
 operators.addEventListener("click", handleOperatorsClick);
 function handleOperatorsClick(e) {
   if (isContainer(e.target)) return;
+  if (!a) return;
 
   operator = e.target.innerText;
   updateDisplayText();
