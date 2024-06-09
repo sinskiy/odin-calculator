@@ -1,16 +1,41 @@
-let a = 0;
-let operator;
-let b = 0;
+let a = "";
+let operator = "";
+let b = "";
+
+const digits = document.querySelector("#digits");
+digits.addEventListener("click", handleDigitsClick);
+function handleDigitsClick(e) {
+  if (isContainer(e.target)) return;
+
+  if (!operator) {
+    a += e.target.innerText;
+  } else {
+    b += e.target.innerText;
+  }
+  updateDisplayText();
+}
+
+const operators = document.querySelector("#operators");
+operators.addEventListener("click", handleOperatorsClick);
+function handleOperatorsClick(e) {
+  if (isContainer(e.target)) return;
+
+  operator = e.target.innerText;
+  updateDisplayText();
+}
 
 const display = document.querySelector("#display");
-const digits = document.querySelectorAll("#digits button");
+function updateDisplayText() {
+  display.innerText = `${a} ${operator} ${b}`;
+}
 
-digits.forEach((digit) => digit.addEventListener("click", handleDigitClick));
+const operateButton = document.querySelector("#operate");
+operateButton.addEventListener("click", handleOperateButtonClick);
 
-let displayValue = "";
-function handleDigitClick(e) {
-  displayValue += e.target.innerText;
-  display.innerText = displayValue;
+function handleOperateButtonClick() {
+  const result = operate(Number(a), operator, Number(b)).toString();
+  display.innerText = result;
+  a = result;
 }
 
 function operate(a, operator, b) {
@@ -43,4 +68,8 @@ function multiply(a, b) {
 
 function divide(a, b) {
   return a / b;
+}
+
+function isContainer(element) {
+  return element.id;
 }
