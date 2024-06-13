@@ -29,11 +29,6 @@ function handleOperatorsClick(e) {
   updateDisplayText();
 }
 
-const display = document.querySelector("#display");
-function updateDisplayText() {
-  display.innerText = `${a} ${operator} ${b}`;
-}
-
 const floatedButton = document.querySelector("#floated");
 floatedButton.addEventListener("click", handleFloatedClick);
 function handleFloatedClick(e) {
@@ -103,6 +98,11 @@ function multiply(a, b) {
 
 function divide(a, b) {
   return a / b;
+}
+
+const display = document.querySelector("#display");
+function updateDisplayText() {
+  display.innerText = `${a} ${operator} ${b}`;
 }
 
 function isContainer(element) {
