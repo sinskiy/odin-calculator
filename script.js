@@ -38,6 +38,7 @@ const floatedButton = document.querySelector("#floated");
 floatedButton.addEventListener("click", handleFloatedClick);
 function handleFloatedClick(e) {
   if (a.includes(".") || b.includes(".")) return;
+  if (!a || (a && operator && !b)) return;
 
   if (!operator) {
     a += e.target.innerText;
