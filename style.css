@@ -29,39 +29,6 @@ body {
   justify-content: center;
 }
 
-button {
-  min-width: 5rem;
-  min-height: 5rem;
-
-  border: none;
-  border-radius: 9999px;
-
-  margin: 0 0.5rem 0.5rem 0;
-
-  background-color: var(--surface-low);
-  color: var(--on-background);
-
-  font-size: 2rem;
-
-  transition: filter 150ms;
-}
-#operators button {
-  background-color: var(--secondary);
-  color: var(--on-secondary);
-}
-button:hover {
-  filter: brightness(125%);
-}
-button:disabled {
-  opacity: 20%;
-}
-
-#main,
-#digits div,
-#operators {
-  display: flex;
-}
-
 #calculator {
   width: fit-content;
 
@@ -77,7 +44,10 @@ button:disabled {
 #display {
   max-width: 100%;
   min-height: calc(1lh + 2rem);
+
   padding: 1rem;
+
+  margin-bottom: 1rem;
 
   border-radius: 1rem;
   background-color: var(--surface-high);
@@ -101,14 +71,40 @@ button:disabled {
   display: flex;
 }
 
+#operators button {
+  background-color: var(--secondary);
+  color: var(--on-secondary);
+}
 #clear,
 #back {
   background-color: var(--tertiary);
   color: var(--on-tertiary);
   flex-grow: 1;
 }
-
 #operate {
   background-color: var(--primary);
   color: var(--on-primary);
+}
+
+button {
+  min-width: 5rem;
+  min-height: 5rem;
+
+  border: none;
+  border-radius: 9999px;
+
+  margin: 0 0.5rem 0.5rem 0;
+
+  background-color: var(--surface-low);
+  color: var(--on-background);
+
+  font-size: 2rem;
+
+  transition: filter 150ms, transform 150ms;
+}
+button:hover {
+  filter: brightness(125%);
+}
+button:active {
+  transform: translateY(2px);
 }
