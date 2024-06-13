@@ -11,6 +11,19 @@ function handleClearButtonClick() {
   updateDisplayText();
 }
 
+const backButton = document.querySelector("#back");
+backButton.addEventListener("click", handleBackButtonClick);
+function handleBackButtonClick() {
+  if (b) {
+    b = b.slice(0, -1);
+  } else if (operator) {
+    operator = "";
+  } else {
+    a = a.slice(0, -1);
+  }
+  updateDisplayText();
+}
+
 const digits = document.querySelector("#digits");
 digits.addEventListener("click", handleDigitsClick);
 function handleDigitsClick(e) {
