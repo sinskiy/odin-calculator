@@ -2,6 +2,15 @@ let a = "";
 let operator = "";
 let b = "";
 
+const clearButton = document.querySelector("#clear");
+clearButton.addEventListener("click", handleClearButtonClick);
+function handleClearButtonClick() {
+  a = "";
+  operator = "";
+  b = "";
+  updateDisplayText();
+}
+
 const digits = document.querySelector("#digits");
 digits.addEventListener("click", handleDigitsClick);
 function handleDigitsClick(e) {
@@ -19,16 +28,6 @@ function handleDigitsClick(e) {
   updateDisplayText();
 }
 
-const operators = document.querySelector("#operators");
-operators.addEventListener("click", handleOperatorsClick);
-function handleOperatorsClick(e) {
-  if (isContainer(e.target)) return;
-  if (!a) return;
-
-  operator = e.target.innerText;
-  updateDisplayText();
-}
-
 const floatedButton = document.querySelector("#floated");
 floatedButton.addEventListener("click", handleFloatedClick);
 function handleFloatedClick(e) {
@@ -43,15 +42,15 @@ function handleFloatedClick(e) {
   updateDisplayText();
 }
 
-const clearButton = document.querySelector("#clear");
-clearButton.addEventListener("click", handleClearButtonClick);
-function handleClearButtonClick() {
-  a = "";
-  operator = "";
-  b = "";
+const operators = document.querySelector("#operators");
+operators.addEventListener("click", handleOperatorsClick);
+function handleOperatorsClick(e) {
+  if (isContainer(e.target)) return;
+  if (!a) return;
+
+  operator = e.target.innerText;
   updateDisplayText();
 }
-
 const operateButton = document.querySelector("#operate");
 operateButton.addEventListener("click", handleOperateButtonClick);
 function handleOperateButtonClick() {
