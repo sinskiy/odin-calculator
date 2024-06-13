@@ -105,5 +105,5 @@ function divide(a, b) {
 }
 
 function isContainer(element) {
-  return element.id;
+  return element.id || element.classList.length;
 }
